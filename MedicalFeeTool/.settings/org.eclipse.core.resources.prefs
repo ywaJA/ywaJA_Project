@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/com/medicalfee/Activity/MainActivity.java=UTF-8
+encoding//src/com/medicalfee/Activity/QueryActivity.java=UTF-8
+encoding//src/com/medicalfee/Adapter/ListAdapter.java=UTF-8
+encoding//src/com/medicalfee/View/Dialogs.java=UTF-8
+encoding//src/com/medicalfee/View/MyView.java=UTF-8
+encoding//src/com/medicalfee/data/DBHelper.java=UTF-8
+encoding//src/com/medicalfee/data/Shared.java=UTF-8
+encoding//src/com/medicalfee/data/UseData.java=UTF-8
+encoding//src/com/medicalfee/javabean/MedicalFeeBean.java=UTF-8
+encoding//src/com/medicalfee/util/Util.java=UTF-8
+encoding/<project>=UTF-8

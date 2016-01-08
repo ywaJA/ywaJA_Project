@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/name"
+                style="@style/TextSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="姓名"
+                android:padding="15dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/work_age"
+                style="@style/TextSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="工龄"
+                android:padding="15dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/receipt"
+                style="@style/TextSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="收据"
+                android:padding="15dp"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/deduction"
+                style="@style/TextSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="减项"
+                android:padding="15dp"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/ok"
+                style="@style/TextSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="计算" />
+
+            <TextView
+                android:id="@+id/show_result"
+                style="@style/TextSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="结果:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/add"
+                    style="@style/TextSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="添加" />
+
+                <Button
+                    android:id="@+id/query"
+                    style="@style/TextSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="查询" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_select" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

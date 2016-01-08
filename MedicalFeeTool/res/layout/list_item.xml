@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/item_id"
+        style="@style/TextSize"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="No" />
+
+    <TextView
+        android:id="@+id/item_name"
+        style="@style/TextSize"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="name" />
+
+    <TextView
+        android:id="@+id/work_age"
+        style="@style/TextSize"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="work_age" />
+
+    <TextView
+        android:id="@+id/yearLimits"
+        style="@style/TextSize"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="yearLimits" />
+
+    <TextView
+        android:id="@+id/receipt"
+        style="@style/TextSize"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="receipt" />
+
+    <TextView
+        android:id="@+id/deduction"
+        style="@style/TextSize"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="deduction" />
+
+    <TextView
+        android:id="@+id/receipt_approval"
+        style="@style/TextSize"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="receipt_approval" />
+
+    <TextView
+        android:id="@+id/amount_verification"
+        style="@style/TextSize"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="amount_verification" />
+
+</LinearLayout>
