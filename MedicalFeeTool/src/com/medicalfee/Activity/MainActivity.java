@@ -1,5 +1,6 @@
 package com.medicalfee.Activity;
 
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpHead;
 
 import android.app.Activity;
@@ -70,9 +71,9 @@ public class MainActivity extends Activity implements OnClickListener, OnShakeLi
 
 	private void getJok() {
 		// TODO Auto-generated method stub
-		HttpHead hh = new HttpHead(Config.JOKE);
-		hh.addHeader("apikey", Config.BAIDU_KEY);
-		BaseCoreVo vo = new BaseCoreVo(hh.toString());
+		HttpGet hg = new HttpGet(Config.JOKE);
+		hg.addHeader("apikey", Config.BAIDU_KEY);
+		BaseCoreVo vo = new BaseCoreVo(hg.toString());
 		vo.setRequestMode(Constants.REQUEST_MODE_GET);
 		vo.setDataCompress(Constants.DATA_COMPRESS_NO);
 		vo.setMap("page", "1");
