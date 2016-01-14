@@ -10,8 +10,8 @@ import org.apache.http.Header;
 
 import android.util.Log;
 
-import com.common.Constants;
-import com.common.model.BaseCoreVo;
+import com.common.config.Constants;
+import com.common.model.BaseCoreBean;
 import com.common.service.BaseService;
 import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.RequestParams;
@@ -28,7 +28,7 @@ public class ServiceUtil {
 	 * @param baseService
 	 *            回调接口类
 	 */
-	public static <T> void getJsonData(BaseCoreVo vo, TypeToken<T> type, BaseService<T> baseService) {
+	public static <T> void getJsonData(BaseCoreBean vo, TypeToken<T> type, BaseService<T> baseService) {
 		RequestParams params = getParamsByObject(vo);
 		if (Constants.DATA_COMPRESS_NO == vo.getDataCompress()) {
 			doNoCOMPRESS(vo, params, baseService, type);
@@ -43,7 +43,7 @@ public class ServiceUtil {
 	 * @param vo
 	 * @return
 	 */
-	private static RequestParams getParamsByObject(BaseCoreVo vo) {
+	private static RequestParams getParamsByObject(BaseCoreBean vo) {
 		RequestParams params = new RequestParams();
 		if (vo.getPage() != null) {
 			params.put("page", vo.getPage());
@@ -69,7 +69,7 @@ public class ServiceUtil {
 	 * @param baseService
 	 * @param type
 	 */
-	private static <T> void doNoCOMPRESS(BaseCoreVo vo, RequestParams params, BaseService<T> baseService, TypeToken<T> type) {
+	private static <T> void doNoCOMPRESS(BaseCoreBean vo, RequestParams params, BaseService<T> baseService, TypeToken<T> type) {
 		if (Constants.REQUEST_MODE_GET == vo.getRequestMode()) {
 			doGetNoCOMPRESS(vo, params, baseService, type);
 		} else {
@@ -84,7 +84,7 @@ public class ServiceUtil {
 	 * @param baseService
 	 * @param type
 	 */
-	private static <T> void doCOMPRESS(BaseCoreVo vo, RequestParams params, BaseService<T> baseService, TypeToken<T> type) {
+	private static <T> void doCOMPRESS(BaseCoreBean vo, RequestParams params, BaseService<T> baseService, TypeToken<T> type) {
 		switch (vo.getRequestMode()) {
 		case Constants.REQUEST_MODE_GET:
 			doGetCOMPRESS(vo, params, baseService, type);
@@ -104,7 +104,7 @@ public class ServiceUtil {
 	 * @param baseService
 	 * @param type
 	 */
-	private static <T> void doGetNoCOMPRESS(final BaseCoreVo vo, RequestParams params, final BaseService<T> baseService, final TypeToken<T> type) {
+	private static <T> void doGetNoCOMPRESS(final BaseCoreBean vo, RequestParams params, final BaseService<T> baseService, final TypeToken<T> type) {
 		HttpUtils.doGetNoCompress(vo.getUrl(), params, new TextHttpResponseHandler() {
 			@Override
 			public void onSuccess(int arg0, Header[] arg1, String arg2) {
@@ -128,7 +128,7 @@ public class ServiceUtil {
 	 * @param baseService
 	 * @param type
 	 */
-	private static <T> void doPostNoCOMPRESS(final BaseCoreVo vo, RequestParams params, final BaseService<T> baseService, final TypeToken<T> type) {
+	private static <T> void doPostNoCOMPRESS(final BaseCoreBean vo, RequestParams params, final BaseService<T> baseService, final TypeToken<T> type) {
 		HttpUtils.doPostNoCompress(vo.getUrl(), params, new TextHttpResponseHandler() {
 			@Override
 			public void onSuccess(int arg0, Header[] arg1, String arg2) {
@@ -152,7 +152,7 @@ public class ServiceUtil {
 	 * @param baseService
 	 * @param type
 	 */
-	private static <T> void doGetCOMPRESS(final BaseCoreVo vo, RequestParams params, final BaseService<T> baseService, final TypeToken<T> type) {
+	private static <T> void doGetCOMPRESS(final BaseCoreBean vo, RequestParams params, final BaseService<T> baseService, final TypeToken<T> type) {
 		HttpUtils.doGet(vo.getUrl(), params, new TextHttpResponseHandler() {
 			@Override
 			public void onSuccess(int arg0, Header[] arg1, String arg2) {
@@ -176,7 +176,7 @@ public class ServiceUtil {
 	 * @param baseService
 	 * @param type
 	 */
-	private static <T> void doPostCOMPRESS(final BaseCoreVo vo, RequestParams params, final BaseService<T> baseService, final TypeToken<T> type) {
+	private static <T> void doPostCOMPRESS(final BaseCoreBean vo, RequestParams params, final BaseService<T> baseService, final TypeToken<T> type) {
 		HttpUtils.doPost(vo.getUrl(), params, new TextHttpResponseHandler() {
 			@Override
 			public void onSuccess(int arg0, Header[] arg1, String arg2) {

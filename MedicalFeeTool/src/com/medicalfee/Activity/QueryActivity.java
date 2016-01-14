@@ -6,7 +6,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.medicalfee.R;
-import com.medicalfee.Adapter.ListAdapter;
+import com.medicalfee.adapter.ListAdapter;
 
 public class QueryActivity extends FragmentActivity {
 	private ListView listView;

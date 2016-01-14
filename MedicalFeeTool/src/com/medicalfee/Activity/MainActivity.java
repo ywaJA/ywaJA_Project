@@ -14,11 +14,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.common.Constants;
 import com.common.config.Config;
-import com.common.model.BaseCoreVo;
+import com.common.config.Constants;
+import com.common.interfaces.GetCurrentInternetTime;
+import com.common.model.BaseCoreBean;
 import com.common.service.BaseService;
 import com.common.utils.ServiceUtil;
+import com.common.utils.TimeUtil;
 import com.google.gson.reflect.TypeToken;
 import com.medicalfee.R;
 import com.medicalfee.data.UseData;
@@ -66,14 +68,24 @@ public class MainActivity extends Activity implements OnClickListener, OnShakeLi
 		query.setOnClickListener(this);
 		sensorHelper = new SensorManagerHelper(this);
 		sensorHelper.setOnShakeListener(this);
-//		getJok();
+		TimeUtil.ThreadForGetTime(new GetCurrentInternetTime() {
+
+			@Override
+			public String dealCurrentInternetTime(String currentInternetTime) {
+				// TODO Auto-generated method stub
+				Toast.makeText(MainActivity.this, currentInternetTime, Toast.LENGTH_SHORT).show();
+				return currentInternetTime;
+			}
+
+		});
+		// getJok();
 	}
 
 	private void getJok() {
 		// TODO Auto-generated method stub
 		HttpGet hg = new HttpGet(Config.JOKE);
 		hg.addHeader("apikey", Config.BAIDU_KEY);
-		BaseCoreVo vo = new BaseCoreVo(hg.toString());
+		BaseCoreBean vo = new BaseCoreBean(hg.toString());
 		vo.setRequestMode(Constants.REQUEST_MODE_GET);
 		vo.setDataCompress(Constants.DATA_COMPRESS_NO);
 		vo.setMap("page", "1");

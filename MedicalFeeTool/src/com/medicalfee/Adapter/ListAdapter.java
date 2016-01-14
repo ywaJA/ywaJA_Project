@@ -1,4 +1,4 @@
-package com.medicalfee.Adapter;
+package com.medicalfee.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
